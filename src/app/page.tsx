@@ -4,8 +4,8 @@ import LoginPage from "./login/page"
 function HomePage() {
   return (
     <div> 
-      <RegisterPage />
-      <LoginPage />
+      
+      <h1>Home Page</h1>
     </div>
   )
 }

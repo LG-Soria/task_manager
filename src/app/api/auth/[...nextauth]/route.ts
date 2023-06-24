@@ -19,7 +19,6 @@ const handler = NextAuth({
                 //comprobar si el email existe en la base de datos.
                 const userFound = await Usuarios.findOne({ email: credentials?.email}).select("+password");
                 if(!userFound) throw new Error ("Crendeciales Invalidas")
-                console.log(userFound)
 
                 //comprando si la contraseña coincide
                const passwordMatch = await bcrypt.compare(credentials!.password, userFound.password)
@@ -34,7 +33,7 @@ const handler = NextAuth({
 
             console.log({
                 account,
-                token,
+                token ,
                 user,
                 profile,
             })
@@ -46,7 +45,6 @@ const handler = NextAuth({
         //cuando la session fue iniciada
         session({session, token}){
             session.user = token.user as any;
-            console.log(session, token)
             return session
         }
     },
