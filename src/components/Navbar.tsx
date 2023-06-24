@@ -9,25 +9,30 @@ async function Navbar() {
   
 
   return (
-    <nav>
-      <div>
-        <Link href="/"> Marca de empresa.</Link>
+    <nav className="bg-slate-300  h-12 mb-5 ">
+      <div className="flex flex-row justify-between w-3/4">
+        <Link
+        className="m-3" href="/"> Marca de empresa.</Link>
 
-        <ul>
+        <ul className="justify-between flex flex-row">
           {session ? (
          
-            <li>
+            <>
+            <li className="m-3">
               <Link href="/dashboard/profile"> Perfil </Link>
             </li> 
+              <h1 className='font-medium text-lg mt-2.5'>{session.user?.email}</h1></>
+
+
           ) : (
             <>
-              <li>
+              <li className="m-3">
                 <Link href="/login"> Login </Link>
               </li>
-              <li>
+              <li className="m-3">
                 <Link href="/register"> Registro</Link>
               </li>
-              <li>
+              <li className="m-3">
                 <Link href="/about"> About </Link>
               </li>
             </>

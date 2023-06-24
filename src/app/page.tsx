@@ -1,11 +1,9 @@
-import RegisterPage from "./register/page"
-import LoginPage from "./login/page"
+import Tablero from "@/components/Tablero"
 
 function HomePage() {
   return (
     <div> 
-      
-      <h1>Home Page</h1>
+    <Tablero />
     </div>
   )
 }
